@@ -1,5 +1,5 @@
 import pandas as pd
-from fuzzywuzzy import process
+from thefuzz import process
 
 sp500df = pd.read_csv('SP500.csv')
 
@@ -16,5 +16,3 @@ timedf = pd.read_csv('Time116.csv')
 #print(sustaindf.head())
 #print(timedf.head())
 
-testdf = pd.merge(sp500df, sustaindf, how='inner', on='company')
-print(testdf.head())

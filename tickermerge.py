@@ -24,8 +24,22 @@ companylist = sp500df.company.tolist()
 #print(match[0])
 
 def match_company(target, source):
+    new_list = []
     for rows in target['company']:
         match = process.extractOne(rows, companylist)
-        print(match[0])
+        new_list.append(match[0])
+    return(new_list)
+        #print(match[0])
 
-match_company(sustaindf, sp500df)
+sustaindf['company'] = match_company(sustaindf, companylist)
+print(sustaindf)
+
+timematchdf = match_company(timedf, companylist)
+barronsmatchdf = match_company(barronsdf, companylist)
+spglobalmatchdf = match_company(spglobaldf, companylist)
+corknightsmatchdf = match_company(corporatedf, companylist)
+
+#merge df with match company names to sp500 to populate ticker column
+sustaindropdf = sustaindf.drop(['ticker'], axis=1)
+sustaintickerdf = pd.merge(sustaindropdf, sp500df, on='company')
+print(sustaintickerdf)

@@ -37,24 +37,33 @@ corporatedf['company'] = match_company(corporatedf, companylist)
 sustaindropdf = sustaindf.drop(['ticker'], axis=1)
 sustaintickerdf = pd.merge(sustaindropdf, sp500df, on='company')
 if sustaintickerdf['company'].nunique() != 10:
-    print('Check results for duplicates')
+    print('Check sustain results for duplicates')
 #print(sustaintickerdf)
 #sustaintickerdf.to_csv('sustainnew.csv', index=False)
 
 timedropdf = timedf.drop(['ticker'], axis=1)
 timetickerdf = pd.merge(timedropdf, sp500df, on='company')
 if timetickerdf['company'].nunique() != 116:
-    print('Check results for duplicates')
-#timedropdf.to_csv('timenew.csv', index =False)
+    print('Check time results for duplicates')
+#timetickerdf.to_csv('timenew.csv', index =False)
 
 barronsdropdf = barronsdf.drop(['ticker'], axis=1)
 barronstickerdf = pd.merge(barronsdropdf, sp500df, on='company')
+if barronstickerdf['company'].nunique() != 100:
+    print('Check barrons results for duplicates')
 #print(barronstickerdf)
+#barronstickerdf.to_csv('barronsnew', index=False)
 
 spglobaldropdf = spglobaldf.drop(['ticker'], axis=1)
 spglobaltickerdf = pd.merge(spglobaldropdf, sp500df, on='company')
+if spglobaltickerdf['company'].nunique() != 47:
+    print('Check spglobal results for duplicates')
 #print(spglobaltickerdf)
+#spglobaltickerdf.to_csv('spglobalnew.csv', index=False)
 
 ckdropdf = corporatedf.drop(['ticker'], axis=1)
 cktickerdf = pd.merge(ckdropdf, sp500df, on='company')
+if cktickerdf['company'].nunique() != 20:
+    print('Check ck results for duplicates')
 #print(cktickerdf)
+#cktickerdf.to_csv('cknew.csv', index=False)

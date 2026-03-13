@@ -18,28 +18,43 @@ timedf = pd.read_csv('Time116.csv')
 
 #make companylist from sp500df
 companylist = sp500df.company.tolist()
-#searchcompany = from companydf
-#searchcompany = 'Accent'
-#match = process.extractOne(searchcompany, companylist)
-#print(match[0])
 
+#Verify company names and create new list for column
 def match_company(target, source):
     new_list = []
     for rows in target['company']:
         match = process.extractOne(rows, companylist)
         new_list.append(match[0])
     return(new_list)
-        #print(match[0])
 
 sustaindf['company'] = match_company(sustaindf, companylist)
-print(sustaindf)
-
-timematchdf = match_company(timedf, companylist)
-barronsmatchdf = match_company(barronsdf, companylist)
-spglobalmatchdf = match_company(spglobaldf, companylist)
-corknightsmatchdf = match_company(corporatedf, companylist)
+timedf['company'] = match_company(timedf, companylist)
+barronsdf['company'] = match_company(barronsdf, companylist)
+spglobaldf['company'] = match_company(spglobaldf, companylist)
+corporatedf['company'] = match_company(corporatedf, companylist)
 
 #merge df with match company names to sp500 to populate ticker column
 sustaindropdf = sustaindf.drop(['ticker'], axis=1)
 sustaintickerdf = pd.merge(sustaindropdf, sp500df, on='company')
-print(sustaintickerdf)
+if sustaintickerdf['company'].nunique() != 10:
+    print('Check results for duplicates')
+#print(sustaintickerdf)
+#sustaintickerdf.to_csv('sustainnew.csv', index=False)
+
+timedropdf = timedf.drop(['ticker'], axis=1)
+timetickerdf = pd.merge(timedropdf, sp500df, on='company')
+if timetickerdf['company'].nunique() != 116:
+    print('Check results for duplicates')
+#timedropdf.to_csv('timenew.csv', index =False)
+
+barronsdropdf = barronsdf.drop(['ticker'], axis=1)
+barronstickerdf = pd.merge(barronsdropdf, sp500df, on='company')
+#print(barronstickerdf)
+
+spglobaldropdf = spglobaldf.drop(['ticker'], axis=1)
+spglobaltickerdf = pd.merge(spglobaldropdf, sp500df, on='company')
+#print(spglobaltickerdf)
+
+ckdropdf = corporatedf.drop(['ticker'], axis=1)
+cktickerdf = pd.merge(ckdropdf, sp500df, on='company')
+#print(cktickerdf)

@@ -1,0 +1,11 @@
+rank,company,score,percent,ticker
+1,Equifax,10,18.18181818,EFX
+2,Pfizer,9,16.36363636,PFE
+3,Amazon,8,14.54545455,AMZN
+4,Microsoft,7,12.72727273,MSFT
+5,Autodesk,6,10.90909091,ADSK
+6,Apple Inc.,5,9.090909091,AAPL
+7,IBM,4,7.272727273,IBM
+8,"Tesla, Inc.",3,5.454545455,TSLA
+9,Oracle Corporation,2,3.636363636,ORCL
+10,Cisco,1,1.818181818,CSCO

@@ -20,18 +20,46 @@ timedf = pd.read_csv('Time116.csv')
 companylist = sp500df.company.tolist()
 
 #Verify company names and create new list for column
-def match_company(target, source):
+""" def match_company(target, source):
     new_list = []
     for rows in target['company']:
         match = process.extractOne(rows, companylist)
         new_list.append(match[0])
-    return(new_list)
+    return(new_list) """
 
-sustaindf['company'] = match_company(sustaindf, companylist)
+
+""" threshold = 80
+target = sustaindf['company']
+source = companylist
+results = process.extract(target, source)
+
+new_list = []
+for match, score, index in results:
+    if score >= threshold:
+        new_list.append(match[0])
+        #print(match[0], score)
+    else:
+        pass
+print(new_list) """
+
+threshold = 80
+new_list = []
+
+for company in sustaindf['company']:
+    match, score, index = process.extractOne(company, companylist)
+    if score >= threshold:
+        new_list.append(match)
+    else:
+        new_list.append('No Match')
+
+print(new_list)
+
+
+""" sustaindf['company'] = match_company(sustaindf, companylist)
 timedf['company'] = match_company(timedf, companylist)
 barronsdf['company'] = match_company(barronsdf, companylist)
 spglobaldf['company'] = match_company(spglobaldf, companylist)
-corporatedf['company'] = match_company(corporatedf, companylist)
+corporatedf['company'] = match_company(corporatedf, companylist) """
 
 #merge df with match company names to sp500 to populate ticker column
 sustaindropdf = sustaindf.drop(['ticker'], axis=1)

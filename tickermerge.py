@@ -2,96 +2,98 @@ import pandas as pd
 from rapidfuzz import process
 
 sp500df = pd.read_csv('SP500.csv')
-
 barronsdf = pd.read_csv('Barrons100.csv')
 corporatedf = pd.read_csv('CorporateKnights20.csv')
 spglobaldf = pd.read_csv('S&PGlobal47.csv')
 sustaindf = pd.read_csv('SustainabilityOnline10.csv')
 timedf = pd.read_csv('Time116.csv')
 
-#print(sp500df.head())
-#print(barronsdf.head())
-#print(corporatedf.head())
-#print(spglobaldf.head())
-#print(sustaindf.head())
-#print(timedf.head())
-
-#make companylist from sp500df
+#Create list of company names for matching
 companylist = sp500df.company.tolist()
 
-#Verify company names and create new list for column
-""" def match_company(target, source):
+#Match company names with correct title
+def match_company(target, source):
+    threshold = 80
     new_list = []
-    for rows in target['company']:
-        match = process.extractOne(rows, companylist)
-        new_list.append(match[0])
-    return(new_list) """
+    for company in target:
+        match, score, index = process.extractOne(company, source)
+        if score >= threshold:
+            new_list.append(match)
+        else:
+            new_list.append('No Match')
+    return new_list
 
+def drop_nomatch(df):
+    for company in df['company']:
+         if company == 'No Match':
+            df.drop(df[df['company'] == company].index, inplace=True)
+    return df
 
-""" threshold = 80
-target = sustaindf['company']
-source = companylist
-results = process.extract(target, source)
-
-new_list = []
-for match, score, index in results:
-    if score >= threshold:
-        new_list.append(match[0])
-        #print(match[0], score)
+""" def check_dupes(df):
+    if df['company'].nunique() != len(df):
+        print('Duplicates found:')
+        for company in df['company']:
+            for company2 in df['company']:
+                if company == company2:
+                    print('Duplicate found: ' + company)
+                else:
+                    pass
     else:
-        pass
-print(new_list) """
+            print('No duplicates found') """
 
-threshold = 80
-new_list = []
+def check_dupes(df):
+    duplicate_rows = df[df.duplicated(subset=['company'], keep=False)]
+    print(duplicate_rows)
 
-for company in sustaindf['company']:
-    match, score, index = process.extractOne(company, companylist)
-    if score >= threshold:
-        new_list.append(match)
-    else:
-        new_list.append('No Match')
-
-print(new_list)
-
-
-""" sustaindf['company'] = match_company(sustaindf, companylist)
-timedf['company'] = match_company(timedf, companylist)
-barronsdf['company'] = match_company(barronsdf, companylist)
-spglobaldf['company'] = match_company(spglobaldf, companylist)
-corporatedf['company'] = match_company(corporatedf, companylist) """
-
-#merge df with match company names to sp500 to populate ticker column
+#Sustainability Online
+newsustainlist = match_company(sustaindf['company'], companylist)
+sustaindf['company'] = newsustainlist
+drop_nomatch(sustaindf)
 sustaindropdf = sustaindf.drop(['ticker'], axis=1)
 sustaintickerdf = pd.merge(sustaindropdf, sp500df, on='company')
-if sustaintickerdf['company'].nunique() != 10:
-    print('Check sustain results for duplicates')
-#print(sustaintickerdf)
-#sustaintickerdf.to_csv('sustainnew.csv', index=False)
+check_dupes(sustaintickerdf)
+print(sustaintickerdf.head())
 
+#Time
+newtimelist = match_company(timedf['company'], companylist)
+timedf['company'] = newtimelist
+drop_nomatch(timedf)
 timedropdf = timedf.drop(['ticker'], axis=1)
 timetickerdf = pd.merge(timedropdf, sp500df, on='company')
-if timetickerdf['company'].nunique() != 116:
-    print('Check time results for duplicates')
-#timetickerdf.to_csv('timenew.csv', index =False)
+check_dupes(timetickerdf)
+print(timetickerdf.head())
 
+#Barrons
+newbarronslist = match_company(barronsdf['company'], companylist)
+barronsdf['company'] = newbarronslist
+drop_nomatch(barronsdf)
 barronsdropdf = barronsdf.drop(['ticker'], axis=1)
 barronstickerdf = pd.merge(barronsdropdf, sp500df, on='company')
-if barronstickerdf['company'].nunique() != 100:
-    print('Check barrons results for duplicates')
-#print(barronstickerdf)
-#barronstickerdf.to_csv('barronsnew', index=False)
+check_dupes(barronstickerdf)
+print(barronstickerdf.head())
 
+#SPGlobal
+newspgloballist = match_company(spglobaldf['company'], companylist)
+spglobaldf['company'] = newspgloballist
+drop_nomatch(spglobaldf)
 spglobaldropdf = spglobaldf.drop(['ticker'], axis=1)
 spglobaltickerdf = pd.merge(spglobaldropdf, sp500df, on='company')
-if spglobaltickerdf['company'].nunique() != 47:
-    print('Check spglobal results for duplicates')
-#print(spglobaltickerdf)
-#spglobaltickerdf.to_csv('spglobalnew.csv', index=False)
+check_dupes(spglobaltickerdf)
+print(spglobaltickerdf.head())
 
+#Corporate Knights
+newcklist = match_company(corporatedf['company'], companylist)
+corporatedf['company'] = newcklist
+drop_nomatch(corporatedf)
 ckdropdf = corporatedf.drop(['ticker'], axis=1)
 cktickerdf = pd.merge(ckdropdf, sp500df, on='company')
-if cktickerdf['company'].nunique() != 20:
-    print('Check ck results for duplicates')
-#print(cktickerdf)
+check_dupes(cktickerdf)
+print(cktickerdf.head())
+
+
+
+#sustaintickerdf.to_csv('sustainnew.csv', index=False)
+#timetickerdf.to_csv('timenew.csv', index =False)
+#barronstickerdf.to_csv('barronsnew', index=False)
+#spglobaltickerdf.to_csv('spglobalnew.csv', index=False)
 #cktickerdf.to_csv('cknew.csv', index=False)

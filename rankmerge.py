@@ -10,5 +10,9 @@ timenew = pd.read_csv('timenew.csv')
 
 dfs = [barronsnew, cknew, spglobalnew, sustainnew, timenew]
 combined = pd.concat(dfs)
-print(combined.head())
-print(len(combined))
+#print(combined.head())
+#print(len(combined))
+
+scores = combined.groupby('company')['percent'].sum().reset_index()
+print(len(scores))
+print(scores.head())

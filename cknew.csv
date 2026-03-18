@@ -1,0 +1,15 @@
+rank,company,score,percent,ticker
+1,Biogen,20,9.523809524,BIIB
+3,Johnson & Johnson,18,8.571428571,JNJ
+6,Ecolab,15,7.142857143,ECL
+7,General Mills,14,6.666666667,GIS
+8,Agilent Technologies,13,6.19047619,A
+9,Intel,12,5.714285714,INTC
+10,Cadence Design Systems,11,5.238095238,CDNS
+12,Cisco,9,4.285714286,CSCO
+13,Johnson Controls,8,3.80952381,JCI
+14,Colgate-Palmolive,7,3.333333333,CL
+15,Generac,6,2.857142857,GNRC
+17,EPAM Systems,4,1.904761905,EPAM
+18,Baker Hughes,3,1.428571429,BKR
+19,Prologis,2,0.9523809524,PLD

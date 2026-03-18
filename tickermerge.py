@@ -53,6 +53,7 @@ sustaindropdf = sustaindf.drop(['ticker'], axis=1)
 sustaintickerdf = pd.merge(sustaindropdf, sp500df, on='company')
 check_dupes(sustaintickerdf)
 print(sustaintickerdf.head())
+sustaintickerdf.to_csv('sustainnew.csv', index=False)
 
 #Time
 newtimelist = match_company(timedf['company'], companylist)
@@ -62,6 +63,7 @@ timedropdf = timedf.drop(['ticker'], axis=1)
 timetickerdf = pd.merge(timedropdf, sp500df, on='company')
 check_dupes(timetickerdf)
 print(timetickerdf.head())
+timetickerdf.to_csv('timenew.csv', index =False)
 
 #Barrons
 newbarronslist = match_company(barronsdf['company'], companylist)
@@ -71,6 +73,7 @@ barronsdropdf = barronsdf.drop(['ticker'], axis=1)
 barronstickerdf = pd.merge(barronsdropdf, sp500df, on='company')
 check_dupes(barronstickerdf)
 print(barronstickerdf.head())
+barronstickerdf.to_csv('barronsnew.csv', index=False)
 
 #SPGlobal
 newspgloballist = match_company(spglobaldf['company'], companylist)
@@ -80,6 +83,7 @@ spglobaldropdf = spglobaldf.drop(['ticker'], axis=1)
 spglobaltickerdf = pd.merge(spglobaldropdf, sp500df, on='company')
 check_dupes(spglobaltickerdf)
 print(spglobaltickerdf.head())
+spglobaltickerdf.to_csv('spglobalnew.csv', index=False)
 
 #Corporate Knights
 newcklist = match_company(corporatedf['company'], companylist)
@@ -89,11 +93,4 @@ ckdropdf = corporatedf.drop(['ticker'], axis=1)
 cktickerdf = pd.merge(ckdropdf, sp500df, on='company')
 check_dupes(cktickerdf)
 print(cktickerdf.head())
-
-
-
-#sustaintickerdf.to_csv('sustainnew.csv', index=False)
-#timetickerdf.to_csv('timenew.csv', index =False)
-#barronstickerdf.to_csv('barronsnew', index=False)
-#spglobaltickerdf.to_csv('spglobalnew.csv', index=False)
-#cktickerdf.to_csv('cknew.csv', index=False)
+cktickerdf.to_csv('cknew.csv', index=False)

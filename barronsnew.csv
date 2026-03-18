@@ -1,0 +1,71 @@
+rank,company,score,percent,ticker
+1,Clorox,100,1.98019802,CLX
+2,Prudential Financial,99,1.96039604,PRU
+3,Arch Capital Group,98,1.940594059,ACGL
+4,Corning Inc.,97,1.920792079,GLW
+5,Constellation Energy,96,1.900990099,CEG
+7,Lam Research,94,1.861386139,LRCX
+8,MetLife,93,1.841584158,MET
+9,S&P Global,92,1.821782178,SPGI
+11,CBRE Group,90,1.782178218,CBRE
+13,Exelon,88,1.742574257,EXC
+15,Deckers Brands,86,1.702970297,DECK
+17,Kimberly-Clark,84,1.663366337,KMB
+18,Applied Materials,83,1.643564356,AMAT
+19,Analog Devices,82,1.623762376,ADI
+21,Procter & Gamble,80,1.584158416,PG
+22,Republic Services,79,1.564356436,RSG
+23,Avery Dennison,78,1.544554455,AVY
+24,Eversource Energy,77,1.524752475,ES
+25,Agilent Technologies,76,1.504950495,A
+27,Ecolab,74,1.465346535,ECL
+29,Public Service Enterprise Group,72,1.425742574,PEG
+30,Nucor,71,1.405940594,NUE
+31,Cummins,70,1.386138614,CMI
+35,International Flavors & Fragrances,66,1.306930693,IFF
+37,ON Semiconductor,64,1.267326733,ON
+38,Lennox International,63,1.247524752,LII
+39,Ameriprise Financial,62,1.227722772,AMP
+42,Teradyne,59,1.168316832,TER
+44,Booking Holdings,57,1.128712871,BKNG
+45,Kroger,56,1.108910891,KR
+46,Keysight Technologies,55,1.089108911,KEYS
+49,Rockwell Automation,52,1.02970297,ROK
+51,Hormel Foods,50,0.9900990099,HRL
+52,Automatic Data Processing,49,0.9702970297,ADP
+54,Hormel Foods,47,0.9306930693,HRL
+56,Baker Hughes,45,0.8910891089,BKR
+57,Skyworks Solutions,44,0.8712871287,SWKS
+59,Texas Instruments,42,0.8316831683,TXN
+61,Principal Financial Group,40,0.7920792079,PFG
+62,PPG Industries,39,0.7722772277,PPG
+63,American Water Works,38,0.7524752475,AWK
+65,Waste Management,36,0.7128712871,WM
+66,Verisk Analytics,35,0.6930693069,VRSK
+67,KLA Corporation,34,0.6732673267,KLAC
+69,W. W. Grainger,32,0.6336633663,GWW
+70,Cisco,31,0.6138613861,CSCO
+71,Hewlett Packard Enterprise,30,0.5940594059,HPE
+73,American Express,28,0.5544554455,AXP
+74,Nvidia,27,0.5346534653,NVDA
+75,First Solar,26,0.5148514851,FSLR
+76,Air Products,25,0.495049505,APD
+77,Estée Lauder Companies (The),24,0.4752475248,EL
+78,Stanley Black & Decker,23,0.4554455446,SWK
+79,General Mills,22,0.4356435644,GIS
+80,Intel,21,0.4158415842,INTC
+81,Agilent Technologies,20,0.396039604,A
+83,Consolidated Edison,18,0.3564356436,ED
+84,Carrier Global,17,0.3366336634,CARR
+85,Electronic Arts,16,0.3168316832,EA
+86,Campbell's Company (The),15,0.297029703,CPB
+87,Hologic,14,0.2772277228,HOLX
+88,Truist Financial,13,0.2574257426,TFC
+89,International Flavors & Fragrances,12,0.2376237624,IFF
+91,Qualcomm,10,0.198019802,QCOM
+92,Best Buy,9,0.1782178218,BBY
+94,Ingersoll Rand,7,0.1386138614,IR
+96,Mastercard,5,0.09900990099,MA
+98,Keurig Dr Pepper,3,0.05940594059,KDP
+99,EOG Resources,2,0.0396039604,EOG
+100,Synopsys,1,0.0198019802,SNPS

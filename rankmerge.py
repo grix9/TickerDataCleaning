@@ -8,6 +8,41 @@ spglobalnew = pd.read_csv('spglobalnew.csv')
 sustainnew = pd.read_csv('sustainnew.csv')
 timenew = pd.read_csv('timenew.csv')
 
+#Add Reciprocal Rank Fusion column = 1/(rank+60)
+
+def rank(df):
+    rank = []
+    count = 1
+    for row in df['company']:
+        rank.append(count)
+        count += 1
+    df['rank'] = rank
+
+def rrf(df):
+    df['rrf'] = 1 / (df['rank'] + 60)
+    return(df)
+
+rank(barronsnew)
+rrf(barronsnew)
+print(barronsnew.head())
+#barronsnew.to_csv('barronsfinal.csv', index=False)
+
+rank(cknew)
+rrf(cknew)
+#cknew.to_csv('ckfinal.csv', index=False)
+
+rank(spglobalnew)
+rrf(spglobalnew)
+#spglobalnew.to_csv('spglobalfinal.csv', index=False)
+
+rank(sustainnew)
+rrf(sustainnew)
+#sustainnew.to_csv('sustainfinal.csv', index=False)
+
+rank(timenew)
+rrf(timenew)
+#timenew.to_csv('timefinal.csv', index=False)
+
 dfs = [barronsnew, cknew, spglobalnew, sustainnew, timenew]
 combined = pd.concat(dfs)
 print(combined.head())

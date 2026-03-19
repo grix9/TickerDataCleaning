@@ -24,7 +24,7 @@ def rrf(df):
 
 rank(barronsnew)
 rrf(barronsnew)
-print(barronsnew.head())
+#print(barronsnew.head())
 #barronsnew.to_csv('barronsfinal.csv', index=False)
 
 rank(cknew)
@@ -45,5 +45,8 @@ rrf(timenew)
 
 dfs = [barronsnew, cknew, spglobalnew, sustainnew, timenew]
 combined = pd.concat(dfs)
-print(combined.head())
-print(len(combined))
+#print(combined.head())
+#print(len(combined))
+
+final_scores = combined.groupby('company')['rrf'].sum().reset_index()
+print(final_scores.sort_values(by='rrf', ascending=False))

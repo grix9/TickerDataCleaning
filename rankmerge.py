@@ -50,3 +50,4 @@ combined = pd.concat(dfs)
 
 final_scores = combined.groupby('company')['rrf'].sum().reset_index()
 print(final_scores.sort_values(by='rrf', ascending=False))
+final_scores.to_csv('finalranking.csv', index=False)

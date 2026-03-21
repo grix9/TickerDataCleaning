@@ -43,14 +43,21 @@ rank(timenew)
 rrf(timenew)
 #timenew.to_csv('timefinal.csv', index=False)
 
+
 dfs = [barronsnew, cknew, spglobalnew, sustainnew, timenew]
 combined = pd.concat(dfs)
-#print(combined.head())
-#print(len(combined))
+combined = combined[['company', 'ticker', 'rrf']]
+#print(combined)
 
-final_scores = combined.groupby('company')['rrf'].sum().reset_index()
-print(final_scores.sort_values(by='rrf', ascending=False))
-final_scores.to_csv('finalranking.csv', index=False)
-scores = combined.groupby('company')['percent'].sum().reset_index()
-print(len(scores))
-print(scores.head())
+#final_scores = combined.groupby('company')['rrf'].sum().reset_index()
+#print(final_scores)
+
+#print(final_scores.sort_values(by='rrf', ascending=False))
+#final_scores.to_csv('finalranking.csv', index=False)
+#scores = combined.groupby('company')['percent'].sum().reset_index()
+#print(scores.head())
+
+final_scores = (combined.groupby(['company', 'ticker'], as_index=False).agg(rrf=('rrf', 'sum')))
+
+print(final_scores)
+final_scores.to_csv('finalscores.csv', index=False)

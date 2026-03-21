@@ -17,10 +17,7 @@ rank,company,score,percent,ticker
 17,Adobe Inc.,31,2.74822695,ADBE
 18,Equity Residential,30,2.659574468,EQR
 19,Freeport-McMoRan,29,2.570921986,FCX
-20,Adobe Inc.,28,2.482269504,ADBE
 21,Healthpeak Properties,27,2.393617021,DOC
-22,Alphabet Inc. (Class A),26,2.304964539,GOOGL
-23,Alphabet Inc. (Class A),25,2.216312057,GOOGL
 24,International Flavors & Fragrances,24,2.127659574,IFF
 25,Iron Mountain,23,2.039007092,IRM
 26,Jacobs Solutions,22,1.95035461,J
@@ -31,14 +28,11 @@ rank,company,score,percent,ticker
 31,Adobe Inc.,17,1.507092199,ADBE
 32,Adobe Inc.,16,1.418439716,ADBE
 33,S&P Global,15,1.329787234,SPGI
-34,Digital Realty,14,1.241134752,DLR
 36,Sempra,12,1.063829787,SRE
 37,ServiceNow,11,0.975177305,NOW
 39,AES Corporation,9,0.7978723404,AES
 40,Williams Companies,8,0.7092198582,WMB
 41,Union Pacific Corporation,7,0.6205673759,UNP
-42,Adobe Inc.,6,0.5319148936,ADBE
-43,Adobe Inc.,5,0.4432624113,ADBE
 44,Waters Corporation,4,0.3546099291,WAT
 45,Weyerhaeuser,3,0.2659574468,WY
 46,Packaging Corporation of America,2,0.1773049645,PKG

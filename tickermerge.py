@@ -29,17 +29,6 @@ def drop_nomatch(df):
             df.drop(df[df['company'] == company].index, inplace=True)
     return df
 
-""" def check_dupes(df):
-    if df['company'].nunique() != len(df):
-        print('Duplicates found:')
-        for company in df['company']:
-            for company2 in df['company']:
-                if company == company2:
-                    print('Duplicate found: ' + company)
-                else:
-                    pass
-    else:
-            print('No duplicates found') """
 
 def check_dupes(df):
     duplicate_rows = df[df.duplicated(subset=['company'], keep=False)]
@@ -52,8 +41,8 @@ drop_nomatch(sustaindf)
 sustaindropdf = sustaindf.drop(['ticker'], axis=1)
 sustaintickerdf = pd.merge(sustaindropdf, sp500df, on='company')
 check_dupes(sustaintickerdf)
-print(sustaintickerdf.head())
-sustaintickerdf.to_csv('sustainnew.csv', index=False)
+#print(sustaintickerdf.head())
+#sustaintickerdf.to_csv('sustainnew.csv', index=False)
 
 #Time
 newtimelist = match_company(timedf['company'], companylist)
@@ -62,8 +51,8 @@ drop_nomatch(timedf)
 timedropdf = timedf.drop(['ticker'], axis=1)
 timetickerdf = pd.merge(timedropdf, sp500df, on='company')
 check_dupes(timetickerdf)
-print(timetickerdf.head())
-timetickerdf.to_csv('timenew.csv', index =False)
+#print(timetickerdf.head())
+#timetickerdf.to_csv('timenew.csv', index =False)
 
 #Barrons
 newbarronslist = match_company(barronsdf['company'], companylist)
@@ -72,8 +61,8 @@ drop_nomatch(barronsdf)
 barronsdropdf = barronsdf.drop(['ticker'], axis=1)
 barronstickerdf = pd.merge(barronsdropdf, sp500df, on='company')
 check_dupes(barronstickerdf)
-print(barronstickerdf.head())
-barronstickerdf.to_csv('barronsnew.csv', index=False)
+#print(barronstickerdf.head())
+#barronstickerdf.to_csv('barronsnew.csv', index=False)
 
 #SPGlobal
 newspgloballist = match_company(spglobaldf['company'], companylist)
@@ -82,8 +71,8 @@ drop_nomatch(spglobaldf)
 spglobaldropdf = spglobaldf.drop(['ticker'], axis=1)
 spglobaltickerdf = pd.merge(spglobaldropdf, sp500df, on='company')
 check_dupes(spglobaltickerdf)
-print(spglobaltickerdf.head())
-spglobaltickerdf.to_csv('spglobalnew.csv', index=False)
+#print(spglobaltickerdf.head())
+#spglobaltickerdf.to_csv('spglobalnew.csv', index=False)
 
 #Corporate Knights
 newcklist = match_company(corporatedf['company'], companylist)
@@ -92,5 +81,5 @@ drop_nomatch(corporatedf)
 ckdropdf = corporatedf.drop(['ticker'], axis=1)
 cktickerdf = pd.merge(ckdropdf, sp500df, on='company')
 check_dupes(cktickerdf)
-print(cktickerdf.head())
-cktickerdf.to_csv('cknew.csv', index=False)
+#print(cktickerdf.head())
+#cktickerdf.to_csv('cknew.csv', index=False)

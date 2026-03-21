@@ -33,7 +33,6 @@ rank,company,score,percent,ticker
 49,Rockwell Automation,52,1.02970297,ROK
 51,Hormel Foods,50,0.9900990099,HRL
 52,Automatic Data Processing,49,0.9702970297,ADP
-54,Hormel Foods,47,0.9306930693,HRL
 56,Baker Hughes,45,0.8910891089,BKR
 57,Skyworks Solutions,44,0.8712871287,SWKS
 59,Texas Instruments,42,0.8316831683,TXN
@@ -54,14 +53,12 @@ rank,company,score,percent,ticker
 78,Stanley Black & Decker,23,0.4554455446,SWK
 79,General Mills,22,0.4356435644,GIS
 80,Intel,21,0.4158415842,INTC
-81,Agilent Technologies,20,0.396039604,A
 83,Consolidated Edison,18,0.3564356436,ED
 84,Carrier Global,17,0.3366336634,CARR
 85,Electronic Arts,16,0.3168316832,EA
 86,Campbell's Company (The),15,0.297029703,CPB
 87,Hologic,14,0.2772277228,HOLX
 88,Truist Financial,13,0.2574257426,TFC
-89,International Flavors & Fragrances,12,0.2376237624,IFF
 91,Qualcomm,10,0.198019802,QCOM
 92,Best Buy,9,0.1782178218,BBY
 94,Ingersoll Rand,7,0.1386138614,IR

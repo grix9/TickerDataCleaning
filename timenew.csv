@@ -17,21 +17,17 @@ rank,company,score,percent,ticker
 20,Cadence Design Systems,97,1.429413498,CDNS
 21,Adobe Inc.,96,1.414677277,ADBE
 22,American Express,95,1.399941055,AXP
-24,International Flavors & Fragrances,93,1.370468612,IFF
 25,Prologis,92,1.35573239,PLD
 26,Ingersoll Rand,91,1.340996169,IR
 27,Keysight Technologies,90,1.326259947,KEYS
 28,Autodesk,89,1.311523725,ADSK
 29,Newmont,88,1.296787504,NEM
 30,Gilead Sciences,87,1.282051282,GILD
-31,Fidelity National Information Services,86,1.26731506,FIS
 33,ServiceNow,84,1.237842617,NOW
 34,Hasbro,83,1.223106396,HAS
 35,Mettler Toledo,82,1.208370174,MTD
 36,Digital Realty,81,1.193633952,DLR
-37,Alphabet Inc. (Class A),80,1.178897731,GOOGL
 38,Molson Coors Beverage Company,79,1.164161509,TAP
-39,American International Group,78,1.149425287,AIG
 40,Bristol Myers Squibb,77,1.134689066,BMY
 41,Analog Devices,76,1.119952844,ADI
 44,S&P Global,73,1.075744179,SPGI
@@ -61,7 +57,6 @@ rank,company,score,percent,ticker
 75,Thermo Fisher Scientific,42,0.6189213086,TMO
 76,Uber,41,0.6041850869,UBER
 78,Salesforce,39,0.5747126437,CRM
-79,Public Service Enterprise Group,38,0.559976422,PEG
 80,KLA Corporation,37,0.5452402004,KLAC
 82,Charles River Laboratories,35,0.5157677571,CRL
 84,Verizon,33,0.4862953139,VZ
@@ -73,14 +68,12 @@ rank,company,score,percent,ticker
 93,Viatris,24,0.3536693192,VTRS
 95,Church & Dwight,22,0.3241968759,CHD
 96,Danaher Corporation,21,0.3094606543,DHR
-98,Brown & Brown,19,0.279988211,BRO
 99,Regency Centers,18,0.2652519894,REG
 100,MetLife,17,0.2505157678,MET
 101,MGM Resorts,16,0.2357795461,MGM
 102,Xylem Inc.,15,0.2210433245,XYL
 103,Cognizant,14,0.2063071029,CTSH
 104,DaVita,13,0.1915708812,DVA
-107,Hormel Foods,10,0.1473622163,HRL
 108,AT&T,9,0.1326259947,T
 109,Corning Inc.,8,0.1178897731,GLW
 114,Humana,3,0.0442086649,HUM

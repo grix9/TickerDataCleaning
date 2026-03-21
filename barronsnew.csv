@@ -1,8 +1,6 @@
 rank,company,score,percent,ticker
 1,Clorox,100,1.98019802,CLX
 2,Prudential Financial,99,1.96039604,PRU
-3,Arch Capital Group,98,1.940594059,ACGL
-4,Corning Inc.,97,1.920792079,GLW
 5,Constellation Energy,96,1.900990099,CEG
 7,Lam Research,94,1.861386139,LRCX
 8,MetLife,93,1.841584158,MET
@@ -25,7 +23,6 @@ rank,company,score,percent,ticker
 35,International Flavors & Fragrances,66,1.306930693,IFF
 37,ON Semiconductor,64,1.267326733,ON
 38,Lennox International,63,1.247524752,LII
-39,Ameriprise Financial,62,1.227722772,AMP
 42,Teradyne,59,1.168316832,TER
 44,Booking Holdings,57,1.128712871,BKNG
 45,Kroger,56,1.108910891,KR
@@ -38,14 +35,12 @@ rank,company,score,percent,ticker
 59,Texas Instruments,42,0.8316831683,TXN
 61,Principal Financial Group,40,0.7920792079,PFG
 62,PPG Industries,39,0.7722772277,PPG
-63,American Water Works,38,0.7524752475,AWK
 65,Waste Management,36,0.7128712871,WM
 66,Verisk Analytics,35,0.6930693069,VRSK
 67,KLA Corporation,34,0.6732673267,KLAC
 69,W. W. Grainger,32,0.6336633663,GWW
 70,Cisco,31,0.6138613861,CSCO
 71,Hewlett Packard Enterprise,30,0.5940594059,HPE
-73,American Express,28,0.5544554455,AXP
 74,Nvidia,27,0.5346534653,NVDA
 75,First Solar,26,0.5148514851,FSLR
 76,Air Products,25,0.495049505,APD
@@ -58,11 +53,9 @@ rank,company,score,percent,ticker
 85,Electronic Arts,16,0.3168316832,EA
 86,Campbell's Company (The),15,0.297029703,CPB
 87,Hologic,14,0.2772277228,HOLX
-88,Truist Financial,13,0.2574257426,TFC
 91,Qualcomm,10,0.198019802,QCOM
 92,Best Buy,9,0.1782178218,BBY
 94,Ingersoll Rand,7,0.1386138614,IR
 96,Mastercard,5,0.09900990099,MA
 98,Keurig Dr Pepper,3,0.05940594059,KDP
-99,EOG Resources,2,0.0396039604,EOG
 100,Synopsys,1,0.0198019802,SNPS
